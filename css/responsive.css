@@ -1,0 +1,603 @@
+@media (max-width: 1480px){
+  .section-inner{
+    max-width: 130rem;
+  }
+  /* section02 */
+  .img-circle, .circle-rotate {
+    width: 55rem;
+    height: 55rem;
+  }
+  /* section04 & 05 */
+  .car-swiper, .bike-swiper{
+    margin-top: 6rem;
+    & .swiper-slide{
+      width: 77rem;
+      height: 55rem;
+    }
+    & .swiper-button-prev{
+      left: 30%;
+    }
+    & .swiper-button-next{
+      right: 30%;
+    }
+  }
+  /* section07 */
+  .map-info{
+    padding: 6rem 4rem;
+  }
+  #map{
+    width: 60%;
+  }
+}
+
+@media(max-width: 1280px){
+  .section-inner{
+    max-width: 110rem;
+  }
+  /* section02 */
+  .img-circle, .circle-rotate {
+    width: 45rem;
+    height: 45rem;
+  }
+  .red-circle{
+    width: 12rem;
+    height: 12rem;
+  }
+  /* section06 */
+  .course-box{
+    max-width: 68rem;
+  }
+  .course-item button dd{
+    gap: 2rem;
+  }
+  /* section07 */
+  .map-wrap{
+    width: 100%;
+  }
+}
+
+@media(max-width: 1100px){
+  .section-inner{
+    max-width: 98rem;
+  }
+  /* section02 */
+  .circle-left, .circle-rotate {
+    top: 50%;
+  }
+  .circle-right {
+    top: 25%;
+    right: 0;
+  }
+  /* section04 & 05 */
+  /* 슬라이드 아이템 하나씩 보이도록 */
+  .car-swiper, .bike-swiper{
+    & .swiper-button-prev, 
+    & .swiper-button-next{
+      width: 6rem;
+      height: 6rem;
+      top: 105%;
+    }
+    & .swiper-pagination{
+      font-size: 2.4rem;
+      & span{
+        font-size: 3rem;
+      }
+    }
+  }
+  /* section07 */
+  #section07{
+    /* padding:2rem 0; */
+  }
+  .map-wrap{
+    height: 80rem;
+    flex-direction: column-reverse;
+  }
+  #map{
+    width: 100%;
+  }
+  .map-info{
+    padding: 4rem;
+  }
+  .map-info-list {
+    gap: 2rem;
+  }
+  .map-info-list br.pc{
+    display: none;
+  }
+  /* footer */
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+  .co-info{
+    text-align: center;
+  }
+  .co-info-line{
+    & span,
+    & a{
+      display: block;
+      line-height: 2.5em;
+      margin-left: 0;
+      &:after{
+        background: url(https://exp.hondakorea.co.kr/static/images/icon/ico-link.svg) no-repeat center;
+        top: 8px;
+        right: 80px;
+      }
+    }
+  }
+  .family-site{
+    margin-bottom: 4rem;
+  }
+  .family-site button{
+    width: 37rem;
+  }
+  .sns-line{
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  .sns-line ul{
+    justify-content: center;
+  }
+  .copyright{
+    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+  }
+}
+
+@media(max-width: 940px){
+  /* header */
+  .main-header {
+    padding: 0 2rem;
+    height: 6.8rem;
+  }
+  .co-logo .logo-pc{
+    display: none;
+  }
+  .co-logo .logo-mo{
+    display: flex;
+  }
+  .nav-btns{
+    gap: 2rem;
+  }
+  .myPage-icon,
+  .menu-icon,
+  .myPage-icon-w,
+  .close-icon-w,
+  .close-icon-w img {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  .header-heading h1{
+    font-size: 3.2rem;
+  }
+  .page-nav{
+    display: none;
+  }
+  /* scroll-header */
+  .scroll-header .co-logo a {
+    width: 6.5rem;
+  }
+  /* gnb */
+  .gnb{
+    width: 100%;
+  }
+  .gnb .nav-col-wrap {
+    padding-top: 15rem;
+  }
+  .nav-col-01 {
+    padding: 0 2rem 10rem;
+  }
+  .nav-list a{
+    font-size: 2.4rem;
+  }
+  .subNav-list {
+    padding: 0 2rem;
+  }
+  .subNav-list a{
+    font-size: 2rem;
+  }
+  .cs-number{
+    font-size: 2.4rem;
+  }
+  .gnb .nav-btns {
+    right: 5%;
+  }
+  /* section */
+  .section-inner{
+    max-width: 78rem;
+  }
+  /* section01 */
+  #section01::after {
+    background: url(../images/img-cafe-01.png) no-repeat left top 15% fixed;
+  }
+  /* section02 */
+  #section02{
+    height: 110vw;
+    padding: 8rem 0;
+    background: url(../images/img-ring.svg) no-repeat bottom -50rem right 5%;
+  }
+  .img-circle, .circle-rotate {
+    width: 38rem;
+    height: 38rem;
+  }
+  .red-circle{
+    width: 10rem;
+    height: 10rem;
+  }
+  /* section03 */
+  #section03{
+    height: 72vw;
+    background: url(../images/img-cafe-04.png) no-repeat center / cover fixed;
+  }
+  .book-content{
+    gap: 4rem;
+  }
+  .book-description{
+    font-size: 2rem;
+  }
+  .book-btns a{
+    font-size: 1.8rem;
+  }
+  /* section04 & 05 */
+  #section04, #section05{
+    height: 110vw;
+  }
+  .slide-heading{
+    font-size: 2rem;
+  }
+  .car-name, .bike-name {
+    font-size: 5.2rem;
+  }
+  .car-swiper, .bike-swiper {
+    height: 60vw;
+    & .swiper-slide {
+      height: 55vw;
+    }
+  }
+  /* section06 */
+  #section06{
+    height: auto;
+    padding: 8rem 0;
+  }
+  .section06-title {
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+  }
+  .car-course-wrap, .bike-course-wrap{
+    height: auto;
+    padding: 3rem 0;
+  }
+  .car-course-wrap, .bike-course-wrap {
+    background: none;
+  }
+  .course-box{
+    max-width: 100%;
+  }
+  .course-box.car{
+    background: url(../images/img-cafe-06-car-m.png) no-repeat center / cover;
+  }
+  .course-box.bike{
+    background: url(../images/img-cafe-06-cycle-m.png) no-repeat center / cover;
+  }
+  .course-heading{
+    font-size: 2rem;
+  }
+  .course-item button dt{
+    font-size: 1.8rem;
+  }
+  /* section07 */
+  #section07{
+    padding: 0;
+    & .section-inner{
+      min-width: 100%;
+    }
+  }
+  .map-wrap{
+    border-radius: 0;
+    width: 100%;
+  }
+  .map-title {
+    font-size: 2.4rem;
+  }
+  .map-info-list li{
+    font-size: 1.6rem;
+  }
+  /* footer */
+  .copyright br.mo{
+    display: block;
+  }
+  /* modal */
+  .modal-wrap.course.show{
+    height: auto;
+    overflow-y: auto;
+  }
+  .modal-car-wrapper, .modal-bike-wrapper {
+    /* height: 100%; */
+    height: auto;
+  }
+  .modal{
+    width: 100%;
+    /* height: 100vh; */
+    height: auto;
+    border-radius: 0;
+    padding: 2rem 0 0;
+  }
+  .modal-content{
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5em;
+  }
+  .course-info{
+    width: 100%;
+    text-align: center;
+    & dl{
+      margin-bottom: 2rem;
+      & dt{
+        font-size: 2.8rem;
+      }
+      & dd{
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .course-img.pc{
+    display: none;
+  }
+  .course-img.mo{
+    display: block;
+  }
+  .course-bottom{
+    padding: 0 2rem;
+    gap: 3rem;
+  }
+  .course-detail{
+    text-align: left;
+  }
+  .course-book-btn.pc{
+    display: none;
+  }
+  .course-book-btn.mo{
+    display: block;
+    width: 100%;
+    line-height: 3em;
+  }
+  .modal-wrap.course .swiper-scrollbar {
+    position: static;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 800px){
+  .section-inner{
+    width: 90%;
+  }
+  section{
+    min-height: 65rem;
+  }
+  /* section01 */
+  #section01{
+    height: 160vw;
+  }
+  .visual-content {
+    padding-top: 17rem;
+  }
+  .visual-content h2{
+    font-size: 2.4rem;
+  }
+  .theGo-logo{
+    width: 16rem;
+    margin: 0 auto;
+  }
+  .theGo-logo img{
+    width: 100%;
+  }
+  /* section02 */
+  .info-heading {
+    font-size: 3.2rem;
+  }
+  .info-description {
+    font-size: 1.8rem;
+    & br.pc{
+      display: none;
+    }
+    & br.mo{
+      display: block;
+    }
+  }
+  .img-circle, .circle-rotate {
+    width: 45vw;
+    height: 45vw;
+  }
+  .circle-left, .circle-rotate {
+    top: 32rem;
+  }
+  .circle-right {
+    top: 16rem;
+  }
+  .red-circle{
+    width: 6rem;
+    height: 6rem;
+  }
+  /* section04 & 05 */
+  .car-swiper, .bike-swiper {
+    & .swiper-button-prev, & .swiper-button-next {
+        width: 4.5rem;
+        height: 4.5rem;
+        top: 102%;
+    }
+    & .swiper-pagination {
+      font-size: 2rem;
+      bottom: -3rem;
+      & span {
+        font-size: 2.4rem;
+      }
+    }
+  }
+  /* section06 */
+  .section06-title {
+    display: none;
+  }
+  .course-box{
+    padding: 4rem 2rem;
+  }
+  .course-item button dt{
+    color: #fff;
+  }
+  .course-item button dd{
+    opacity: 1;
+    visibility: visible;
+    & .dd-pc{
+      display: none;
+    }
+  }
+  /* footer */
+  .terms a {
+    font-size: 1.6rem;
+  }
+  .co-info-line span,
+  .co-info-line a {
+    font-size: 1.4rem;
+  }
+  /* side-btns */
+  .side-btns{
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+@media (max-width : 600px){
+  /* gnb */
+  .nav-col-01 {
+    padding: 0 20px 50px;
+  }
+  .nav-list a{
+    font-size: 20px;
+  }
+  .subNav-list a{
+    font-size: 18px;
+  }
+  .cs-heading {
+    font-size: 16px;
+  }
+  .cs-number{
+    font-size: 18px;
+  }
+  .cs-time{
+    font-size: 14px;
+  }
+  section{
+    min-height: auto;
+  }
+  /* section01 */
+  #section01{
+    height: 140vw;
+  }
+  /* section02 */
+  #section02{
+    height: 160vw;
+  }
+  .info-description {
+    font-size: 1.6rem;
+  }
+  /* section03 */
+  #section03{
+    min-height: 130vw;
+  }
+  .book-description{
+    font-size: 1.8rem;
+    & br.pc{
+      display: none;
+    }
+    & br.mo{
+      display: block;
+    }
+  }
+  .book-btns a{
+    font-size: 1.6rem;
+  }
+  /* section04 & 05 */
+  #section04, #section05{
+    min-height: 150vw;
+  }
+  .slide-heading {
+    font-size: 1.8rem;
+  }
+  .car-name, .bike-name {
+    font-size: 3.2rem;
+  }
+  .car-swiper, .bike-swiper {
+    margin-top: -3rem;
+  }
+  .car-swiper, .bike-swiper {
+    & .swiper-button-prev, & .swiper-button-next {
+        width: 4rem;
+        height: 4rem;
+        top: 108%;
+    }
+    & .swiper-pagination {
+      bottom: -12%;
+    }
+  }
+  /* section07 */
+  .map-info{
+    padding: 2rem;
+  }
+  .map-info-list{
+    & li{
+      gap: 0.5em;
+      & img{
+        width: 2rem;
+        height: 2rem;
+      }
+      & b{
+        width: 9rem;
+        flex: none;
+      }
+    }
+  }
+  #map{
+    height: 150vw;
+  }
+  /* Login page */
+  .login-form {
+    padding: 6rem;
+    font-size: 1.6rem;
+  }
+  .login-inputs input[type="text"],
+  .login-inputs input[type="password"] {
+    font-size: 1.6rem;
+    &::placeholder {
+      font-family: inherit;
+      font-size: 1.6rem;
+    }
+  }
+}
+@media (max-width: 450px){
+  .book-content{
+    padding: 0 1rem;
+  }
+  .book-description{
+    word-break: keep-all;
+  }
+  .book-btns a{
+    line-height: 3em;
+    padding: 0 1.3em;
+  }
+  .car-swiper, .bike-swiper {
+    & .swiper-button-prev{
+      left: 20%;
+    }
+    & .swiper-button-next{
+      right: 20%;
+    }
+    & .swiper-button-prev, 
+    & .swiper-button-next {
+      width: 4rem;
+      height: 4rem;
+      top: 108%;
+    }
+    & .swiper-pagination {
+      bottom: -14%;
+    }
+  }
+}

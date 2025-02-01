@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HONDA Experience Space</title>
+  <!-- jQuery cdn -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- font cdn -->
+  <link
+    rel="stylesheet"
+    as="style"
+    crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+  />
+  <!-- fontawesome cdn -->
+  <script src="https://kit.fontawesome.com/d536acf633.js" crossorigin="anonymous"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="login">
+    <header>
+      <div class="main-header">
+        <div class="co-logo">
+          <a href="index.html" class="logo-pc"><img src="images/logo.svg" alt="혼다 메인 로고" /></a>
+          <a href="index.html" class="logo-mo"><img src="images/logo_MO.svg" alt="혼다 로고"></a>
+        </div>
+        <nav class="main-nav">
+          <p class="nav-btns">
+            <a href="login.html" class="myPage-icon">
+              <img src="images/ico_user.svg" alt="마이페이지" />
+            </a>
+            <a href="#" class="menu-icon">
+              <img src="images/ico_menu.svg" alt="메뉴" />
+            </a>
+          </p>
+        </nav>
+      </div>
+      <div class="header-heading">
+        <h1>로그인</h1>
+      </div>
+    </header>
+     <!-- gnb popup -->
+     <div class="gnb-bg"></div>
+     <div class="gnb">
+       <p class="nav-btns">
+         <a href="login.html" class="myPage-icon-w">
+           <img src="images/ico-user-w.svg" alt="마이페이지" />
+         </a>
+         <a href="#" class="close-icon-w">
+           <img src="images/ico_x_w.svg" alt="메뉴 닫기" />
+         </a>
+       </p>
+       <div class="nav-col-wrap">
+         <div class="nav-col nav-col-01">
+           <div class="nav-list">
+             <a href="#" class="active" data-nav="the-go">Cafe 'The go'</a
+             >
+             <a href="#" data-nav="my-page">My page</a>
+           </div>
+           <div class="cs-container">
+             <p class="cs-heading">Honda 고객센터</p>
+             <p class="cs-number">1588-3250</p>
+             <span>평일 09:00 ~ 18:00<br />(토/일요일, 공휴일 휴무)</span>
+           </div>
+         </div>
+         <div class="nav-col nav-col-02">
+           <div class="theGo-content active" id="the-go">
+             <p class="subNav-list">
+               <a href="#">Cafe 'The go'소개</a>
+               <a href="#">시승예약</a>
+               <a href="#">시승예약내역</a>
+             </p>
+             <p class="nav-img">
+               <img
+                 src="images/@img_gnb_01.png"
+                 alt="더 고 매장 이미지"
+               />
+             </p>
+           </div>
+           <div class="myPage-content" id="my-page">
+             <p class="subNav-list">
+               <a href="#">시승예약내역</a>
+               <a href="#">회원정보확인/수정</a>
+             </p>
+             <p class="nav-img">
+               <img src="images/@img_gnb_03.png" alt="타이핑 이미지" />
+             </p>
+           </div>
+         </div>
+       </div>
+     </div>
+    <main>
+      <section class="login-area">
+        <div class="login-wrap">
+          <form action="" class="login-form">
+            <div class="user-type">
+              <input type="radio" id="individual" name="user-type" checked>
+              <label for="individual">개인회원</label>
+              <input type="radio" id="corporate" name="user-type">
+              <label for="corporate">법인회원</label>
+            </div>
+            <div class="login-inputs">
+              <input type="text" placeholder="아이디(이메일 주소)" class="input-id" autofocus>
+              <span class="id-error"></span>
+              <input type="password" placeholder="비밀번호" class="input-pw">
+              <span class="pw-error"></span>
+              <input type="checkbox" id="save-id"><label for="save-id">아이디 저장</label>
+            </div>
+            <button class="login-btn" type="button">로그인</button>
+            <ul class="bottom-list">
+              <li><a href="#">아이디 찾기</a></li>
+              <li class="login-dot">•</li>
+              <li><a href="#">비밀번호 찾기</a></li>
+              <li class="login-dot">•</li>
+              <li><a href="#">회원가입</a></li>
+            </ul>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="section-inner">
+        <div class="footer-top">
+          <div class="co-info">
+            <p class="terms">
+              <a href="#none">이용약관</a><a href="#none">개인정보처리방침</a>
+            </p>
+            <p class="co-info-line">
+              <span>혼다코리아 주식회사 대표자명 : 이지홍</span>
+              <a href="#none">사업자정보확인</a>
+            </p>
+            <p class="co-info-line">
+              <span>주소 : 서울시 강남구 테헤란로 114길 38 동일타워 13F</span>
+              <span>대표전화 : 02-3416-3300</span>
+              <span>고객문의 : 080-360-0505</span>
+            </p>
+            <p class="co-info-line">
+              <span>사업자 등록번호 : 214-86-92855</span>
+              <span>통신판매업 신고번호 : 2022-서울강남-03241</span>
+              <span>호스팅 서비스 제공 : AWS</span>
+            </p>
+          </div>
+          <div class="sns-box">
+            <div class="family-site">
+              <button type="button">
+                Family Site <img src="images/ico_chevron_down.svg" alt="" />
+              </button>
+              <ul class="site-list">
+                <li><a href="#none">Honda Worldwide</a></li>
+                <li><a href="#none">혼다코리아</a></li>
+                <li><a href="#none">혼다자동차</a></li>
+                <li><a href="#none">혼다모터사이클</a></li>
+              </ul>
+            </div>
+            <div class="sns-line">
+              <ul>
+                <li>혼다자동차</li>
+                <li>
+                  <a href="#none"><img src="images/sns_instagram.svg" alt="혼다자동차 인스타그램"></a>
+                </li>
+                <li>
+                  <a href="#none"><img src="images/sns_facebook.svg" alt="혼다자동차 페이스북"></a>
+                </li>
+                <li>
+                  <a href="#none"><img src="images/sns_youtube.svg" alt="혼다자동차 유튜브"></a>
+                </li>
+              </ul>
+            </div>
+            <div class="sns-line">
+              <ul>
+                <li>혼다모터사이클</li>
+                <li>
+                  <a href="#none"><img src="images/sns_instagram.svg" alt="혼다모터사이클 인스타그램"></a>
+                </li>
+                <li>
+                  <a href="#none"><img src="images/sns_facebook.svg" alt="혼다모터사이클 페이스북"></a>
+                </li>
+                <li>
+                  <a href="#none"><img src="images/sns_youtube.svg" alt="혼다모터사이클 유튜브"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copy-area">
+        <p class="section-inner">
+          <span class="copyright"
+            >copyright &copy; honda korea.<br class="mo">all right reserved.</span>
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- custom js -->
+  <script src="js/common.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
