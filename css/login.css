@@ -1,0 +1,132 @@
+/* ============ Login Page ============= */
+#login {
+  background-color: var(--login-bg);
+}
+.login-wrap {
+  max-width: 80rem;
+  margin: 8rem auto;
+  background-color: #fff;
+}
+.login-form {
+  padding: 6rem;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+.user-type {
+  border-bottom: 2px solid #000;
+  padding-bottom: 2rem;
+}
+.user-type input[type="radio"] {
+  display: none;
+}
+.user-type input[id="individual"]:checked ~ label[for="individual"]::before,
+.user-type input[id="corporate"]:checked ~ label[for="corporate"]::before {
+  background-color: #000;
+  border: none;
+}
+.user-type input[id="individual"]:checked ~ label[for="individual"]::after,
+.user-type input[id="corporate"]:checked ~ label[for="corporate"]::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.7rem;
+  left: 1rem;
+}
+.user-type label {
+  position: relative;
+  padding: 0 2.3em;
+  cursor: pointer;
+}
+.user-type label::before {
+  content: "";
+  position: absolute;
+  top: -0.3rem;
+  left: 0;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  border: 1px solid var(--login-border);
+}
+.login-inputs {
+  padding: 4rem 0;
+}
+.login-inputs input[type="text"],
+.login-inputs input[type="password"] {
+  display: block;
+  width: 100%;
+  font-size: 1.8rem;
+  line-height: 3em;
+  padding-left: 2rem;
+  border-radius: 0;
+  border: 1px solid var(--login-border);
+  margin-bottom: 1rem;
+  outline: none;
+  &::placeholder {
+    font-family: inherit;
+    font-size: 1.8rem;
+    color: var(--text-gray_78);
+  }
+  &:focus {
+    border: 1px solid var(--text-gray_78);
+  }
+  &.active {
+    border: 1px solid var(--Accent-color);
+  }
+}
+.id-error,
+.pw-error {
+  display: none;
+}
+.id-error.active,
+.pw-error.active {
+  display: block;
+  color: var(--Accent-color);
+  margin-bottom: 1rem;
+}
+.login-inputs input[type="checkbox"] {
+  display: none;
+}
+.login-inputs label[for="save-id"] {
+  display: block;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+.login-inputs label[for="save-id"]::before {
+  content: "";
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 1px solid var(--login-border);
+  box-sizing: border-box;
+  /* 가상클래스도 flex요소가 될 수 있음(포지션 속성 적용하지 않았을 때) */
+}
+.login-inputs input[type="checkbox"]:checked ~ label[for="save-id"]::before {
+  background: #000
+    url(https://exp.hondakorea.co.kr/static/images/icon/ico-check.svg) no-repeat
+    center;
+  border-color: transparent;
+}
+.login-btn {
+  width: 100%;
+  font-size: 1.8rem;
+  color: #fff;
+  background-color: #000;
+  line-height: 3em;
+  border: none;
+  margin-bottom: 4rem;
+  cursor: pointer;
+}
+.bottom-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.bottom-list li {
+  color: var(--text-gray_78);
+}

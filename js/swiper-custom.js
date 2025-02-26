@@ -1,11 +1,7 @@
-// swiper custom
-
-// ========= section04 slide custom ==========
+// =========== section04 Slide Custom ==========
 const swiper = new Swiper(".car-swiper, .bike-swiper", {
-  // Optional parameters
   loop: true,
 
-  // If we need pagination
   pagination: {
     el: ".car-pagination, .bike-pagination",
     type: "fraction",
@@ -16,52 +12,36 @@ const swiper = new Swiper(".car-swiper, .bike-swiper", {
     },
   },
 
-  effect: "coverflow", // Coverflow 효과 적용
-  grabCursor: true, // 커서를 드래그할 수 있도록 설정
-  centeredSlides: true, // 중앙 슬라이드를 항상 화면에 보이도록 설정
+  effect: "coverflow", 
+  grabCursor: true, 
+  centeredSlides: true, 
   speed: 600,
-  slidesPerView: "auto", // 화면에 여러 슬라이드가 보이도록 설정
+  slidesPerView: "auto", 
   coverflowEffect: {
-    rotate: 0, // 슬라이드 회전 각도
-    stretch: 300, // 슬라이드 간의 간격
-    depth: 900, // 슬라이드의 깊이
-    modifier: 1, // 효과 강도
-    slideShadows: false, // 슬라이드 그림자 효과 활성화
+    rotate: 0, 
+    stretch: 300, 
+    depth: 900, 
+    modifier: 1, 
+    slideShadows: false,
   },
   breakpoints: {
     1100: {
       slidesPerView: "auto",
       effect: "coverflow"
-      // spaceBetween: 100
     },
     300: {
       slidesPerView: 1,
       effect: "slide",
-      // spaceBetween: 200,
     },
   },
 
-  // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
 });
 
-// *** bike name ***
-// 제이쿼리
-// let bikeName = $('.bike-swiper .swiper-slide-active').find('.slide-item-name').text();
-// $('.bike-name').text(bikeName);
-
-// $('.swiper-button-prev, .swiper-button-next').click(function(){
-//   $('.bike-name').stop(true, true).css({'left': '600px'})
-//   bikeName = $('.bike-swiper .swiper-slide-active').find('.slide-item-name').text();
-//   $('.bike-name').text(bikeName).animate({
-//     left: 1000,
-//   }, 500, 'swing')
-// })
-
-// ********** car / bike name change 자바스크립트 **********
+// =========== section04 Car / Bike Change Name ===========
 showItemName(".car-swiper", ".car-name");
 showItemName(".bike-swiper", ".bike-name");
 
@@ -91,7 +71,7 @@ function showItemName(slideTarget, name) {
   });
 }
 
-// ========= Modal slide custom ==========
+// ============ Modal(Car / Bike Course) : Slide custom ==========
 var carSwiper = new Swiper(".swiper.car", {
   slidesPerView: 1,
   spaceBetween: 100,
@@ -113,16 +93,9 @@ var bikeSwiper = new Swiper(".swiper.bike", {
   },
 });
 
-// const courseBtns = document.querySelectorAll('.car-course-wrap .course-item');
-// courseBtns.forEach((btn, index)=>{
-//   btn.addEventListener('click', ()=>{
-//     const modal = document.querySelector('.modal-wrap.course');
-//     modal.classList.add('show');
-//     modalSwiper.slideTo(index);
-//   })
-// })
 openModal(".car-course-wrap", "car", carSwiper);
 openModal(".bike-course-wrap", "bike", bikeSwiper);
+
 function openModal(courseWrap, type, swiper) {
   const course = document.querySelector(courseWrap);
   const courseBtns = course.querySelectorAll(".course-item");

@@ -1,4 +1,108 @@
-
+.car-slide,
+.bike-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.car-swiper,
+.bike-swiper {
+  width: 100%;
+  height: 65rem;
+  overflow: visible;
+  margin-top: 12rem;
+}
+.car-swiper,
+.bike-swiper {
+  & .swiper-slide {
+    width: 90rem;
+    height: 60rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+.car-swiper .swiper-slide {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.bike-swiper .swiper-slide {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.slide-item-name {
+  display: none;
+}
+.slide-item-name.car {
+  color: #fff;
+}
+.car-img,
+.bike-img {
+  width: 100%;
+}
+.car-slide,
+.bike-slide {
+  & .swiper-slide-active {
+    backdrop-filter: blur(10px);
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  top: 100%;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+.swiper-button-prev{
+  left: 35%;
+  background: rgba(51, 51, 51, 0.9) url(../images/icon-pre-arrow.svg) no-repeat center;
+}
+.swiper-button-next{
+  right: 35%;
+  background: rgba(51, 51, 51, 0.9) url(../images/icon-next-arrow.svg) no-repeat center;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after{
+  content: "";
+}
+.car-pagination,
+.bike-pagination {
+  bottom: -6rem;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 300;
+}
+.car-pagination {
+  color: rgba(255, 255, 255, 0.2);
+}
+.bike-pagination {
+  color: rgba(0, 0, 0, 0.2);
+}
+.car-pagination span,
+.bike-pagination span {
+  font-size: 4rem;
+  padding: 0 0.5rem;
+}
+.car-pagination,
+.bike-pagination {
+  & .swiper-pagination-current {
+    font-weight: 700;
+  }
+}
+.car-pagination .swiper-pagination-current {
+  color: #fff;
+}
+.bike-pagination .swiper-pagination-current {
+  color: #000;
+}
+.car-pagination .swiper-pagination-total {
+  color: rgba(255, 255, 255, 0.5);
+}
+.bike-pagination .swiper-pagination-total {
+  color: rgba(0, 0, 0, 0.5);
+}
 
 
 
