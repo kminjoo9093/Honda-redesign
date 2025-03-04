@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       },
     })
     .set(".red-circle", { scale: 1, ease: "none" })
-    .to(".red-circle", { scale: 1.5, ease: "none" });
+    .to(".red-circle", { scale: 1.5, ease: "none"});
 
   // section02 circle rotate
   gsap
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       },
     })
     .from(".circle-rotate", { rotation: 0, ease: "power1.out" })
-    .to(".circle-rotate", { rotation: -40, ease: "power1.out" });
+    .to(".circle-rotate", { rotation: -45, ease: "power1.out" });
 
   // section04 background
   let mm = gsap.matchMedia();
@@ -46,5 +46,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
         borderRadius: "0 100rem 100rem 0",
       });
   });
-
 });

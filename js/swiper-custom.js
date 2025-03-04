@@ -1,43 +1,38 @@
 // =========== section04 Slide Custom ==========
 const swiper = new Swiper(".car-swiper, .bike-swiper", {
   loop: true,
-
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  speed: 600,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 300,
+    depth: 900,
+    modifier: 1,
+    slideShadows: false,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
   pagination: {
     el: ".car-pagination, .bike-pagination",
     type: "fraction",
     renderCustom: function (swiper, current, total) {
       return `<span class="swiper-pagination-current">${current}</span>
-      <img src="images/slash.svg" alt="slash icon">
-      <span class="swiper-pagination-total">${total}</span>`;
+        <img src="images/slash.svg" alt="slash icon">
+        <span class="swiper-pagination-total">${total}</span>`;
     },
-  },
-
-  effect: "coverflow", 
-  grabCursor: true, 
-  centeredSlides: true, 
-  speed: 600,
-  slidesPerView: "auto", 
-  coverflowEffect: {
-    rotate: 0, 
-    stretch: 300, 
-    depth: 900, 
-    modifier: 1, 
-    slideShadows: false,
   },
   breakpoints: {
     1100: {
       slidesPerView: "auto",
-      effect: "coverflow"
     },
     300: {
       slidesPerView: 1,
-      effect: "slide",
     },
-  },
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
   },
 });
 

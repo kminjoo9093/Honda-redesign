@@ -218,6 +218,7 @@
   /* section02 */
   #section02 {
     height: 110vw;
+    min-height: 95rem;
     padding: 8rem 0;
     background: url(../images/img-ring.svg) no-repeat bottom -50rem right 5%;
   }
@@ -227,8 +228,7 @@
     height: 38rem;
   }
   .red-circle {
-    width: 10rem;
-    height: 10rem;
+    display: none;
   }
   /* section03 */
   #section03 {
@@ -427,10 +427,6 @@
   .circle-right {
     top: 16rem;
   }
-  .red-circle {
-    width: 6rem;
-    height: 6rem;
-  }
   /* section04 & 05 */
   .car-swiper,
   .bike-swiper {
@@ -509,6 +505,7 @@
   /* section02 */
   #section02 {
     height: 160vw;
+    min-height: 90vw;
   }
   .info-description {
     font-size: 1.6rem;
