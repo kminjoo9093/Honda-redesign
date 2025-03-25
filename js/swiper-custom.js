@@ -1,5 +1,5 @@
 // =========== section04 Slide Custom ==========
-const swiper = new Swiper(".car-swiper, .bike-swiper", {
+const swiperConfig = {
   loop: true,
   effect: "coverflow",
   grabCursor: true,
@@ -34,44 +34,47 @@ const swiper = new Swiper(".car-swiper, .bike-swiper", {
       slidesPerView: 1,
     },
   },
-});
+};
+
+const swiper1 = new Swiper(".car-swiper", swiperConfig);
+const swiper2 = new Swiper(".bike-swiper", swiperConfig);
 
 // =========== section04 Car / Bike Change Name ===========
-showItemName(".car-swiper", ".car-name");
-showItemName(".bike-swiper", ".bike-name");
+
+swiper1.on("slideChange", function () {
+  updateName(".car-swiper", ".car-name");
+});
+swiper2.on("slideChange", function () {
+  updateName(".bike-swiper", ".bike-name");
+});
+
+function updateName(swiperSelector, nameSelector) {
+  const itemName = document.querySelector(nameSelector);
+  itemName.textContent = "";
+  itemName.classList.remove("first-show", "active");
+  setTimeout(() => {
+    showItemName(swiperSelector, nameSelector);
+  }, 100);
+}
 
 function showItemName(slideTarget, name) {
-  let slide = document.querySelector(slideTarget);
-  let activeSlide = slide.querySelector(".swiper-slide-active");
-  let nameContent = activeSlide.querySelector(".slide-item-name").textContent;
-  const slideArrows = slide.querySelectorAll(
-    ".swiper-button-prev, .swiper-button-next"
-  );
-  let itemName = document.querySelector(name);
+  const slide = document.querySelector(slideTarget);
+  const itemName = document.querySelector(name);
+  const activeSlide = slide.querySelector(".swiper-slide-active");
+  const nameContent = activeSlide.querySelector(".slide-item-name").textContent;
+
   itemName.textContent = nameContent;
-
-  slideArrows.forEach((arrow) => {
-    arrow.addEventListener("click", () => {
-      itemName.classList.remove("first-show");
-      itemName.classList.remove("active");
-
-      activeSlide = slide.querySelector(".swiper-slide-active");
-      nameContent = activeSlide.querySelector(".slide-item-name").textContent;
-      itemName.textContent = nameContent;
-
-      setTimeout(() => {
-        itemName.classList.add("active");
-      }, 50);
-    });
-  });
+  itemName.classList.add("active");
 }
+
+showItemName(".car-swiper", ".car-name");
+showItemName(".bike-swiper", ".bike-name");
 
 // ============ Modal(Car / Bike Course) : Slide custom ==========
 var carSwiper = new Swiper(".swiper.car", {
   slidesPerView: 1,
   spaceBetween: 100,
   loop: true,
-  // autoHeight: true,
   scrollbar: {
     el: ".swiper-scrollbar",
     hide: false,
@@ -81,7 +84,6 @@ var bikeSwiper = new Swiper(".swiper.bike", {
   slidesPerView: 1,
   spaceBetween: 100,
   loop: true,
-  // autoHeight: true,
   scrollbar: {
     el: ".swiper-scrollbar",
     hide: false,
@@ -92,9 +94,9 @@ openModal(".car-course-wrap", "car", carSwiper);
 openModal(".bike-course-wrap", "bike", bikeSwiper);
 
 function openModal(courseWrap, type, swiper) {
+  const modalWrap = document.querySelector(".modal-wrap.course");
   const course = document.querySelector(courseWrap);
   const courseBtns = course.querySelectorAll(".course-item");
-  const modalWrap = document.querySelector(".modal-wrap.course");
 
   courseBtns.forEach((btn, index) => {
     btn.addEventListener("click", () => {

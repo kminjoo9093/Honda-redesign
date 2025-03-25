@@ -48,31 +48,43 @@
     backdrop-filter: blur(10px);
   }
 }
+.swiper-controls{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .swiper-button-prev,
 .swiper-button-next {
-  top: 100%;
+  position: static;
+  margin-top: 0;
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
 }
 .swiper-button-prev{
-  left: 35%;
   background: rgba(51, 51, 51, 0.9) url(../images/icon-pre-arrow.svg) no-repeat center;
 }
 .swiper-button-next{
-  right: 35%;
   background: rgba(51, 51, 51, 0.9) url(../images/icon-next-arrow.svg) no-repeat center;
 }
 .swiper-button-prev::after,
 .swiper-button-next::after{
   content: "";
 }
+.swiper-pagination{
+  position: static;
+  width: auto;
+  margin: 0 10vw;
+}
 .car-pagination,
 .bike-pagination {
-  bottom: -6rem;
-  text-align: center;
   font-size: 3rem;
   font-weight: 300;
+  & .swiper-pagination-current {
+    font-weight: 700;
+  }
 }
 .car-pagination {
   color: rgba(255, 255, 255, 0.2);
@@ -84,12 +96,6 @@
 .bike-pagination span {
   font-size: 4rem;
   padding: 0 0.5rem;
-}
-.car-pagination,
-.bike-pagination {
-  & .swiper-pagination-current {
-    font-weight: 700;
-  }
 }
 .car-pagination .swiper-pagination-current {
   color: #fff;

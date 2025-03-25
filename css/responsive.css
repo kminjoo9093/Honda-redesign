@@ -16,19 +16,10 @@
       width: 77rem;
       height: 55rem;
     }
-    & .swiper-button-prev {
-      left: 30%;
-    }
-    & .swiper-button-next {
-      right: 30%;
-    }
   }
   /* section07 */
   .map-info {
     padding: 6rem 4rem;
-  }
-  #map {
-    width: 60%;
   }
 }
 
@@ -80,7 +71,6 @@
     & .swiper-button-next {
       width: 6rem;
       height: 6rem;
-      top: 105%;
     }
     & .swiper-pagination {
       font-size: 2.4rem;
@@ -91,20 +81,20 @@
   }
   /* section07 */
   .map-wrap {
-    height: 80rem;
-    flex-direction: column-reverse;
-  }
-  #map {
-    width: 100%;
+    height: 85rem;
   }
   .map-info {
-    padding: 4rem;
+    height: 40%;
+    width: 100%;
   }
   .map-info-list {
     gap: 2rem;
   }
   .map-info-list br.pc {
     display: none;
+  }
+  #map{
+    height: 100%;
   }
   /* footer */
   .footer-top {
@@ -115,25 +105,20 @@
   .co-info {
     text-align: center;
   }
-  .co-info-line {
-    & span,
-    & a {
-      display: block;
-      line-height: 2.5em;
-      margin-left: 0;
-      &:after {
-        background: url(https://exp.hondakorea.co.kr/static/images/icon/ico-link.svg)
-          no-repeat center;
-        top: 8px;
-        right: 80px;
-      }
-    }
+  .co-info-line span {
+    display: block;
+    line-height: 1.8em;
+  }
+  .co-info-line a:after {
+    background: url(https://exp.hondakorea.co.kr/static/images/icon/ico-link.svg)
+      no-repeat center / 100% auto;
+    width: 1.5rem;
   }
   .family-site {
     margin-bottom: 4rem;
   }
   .family-site button {
-    width: 37rem;
+    width: 35rem;
   }
   .sns-line {
     margin-bottom: 2rem;
@@ -324,12 +309,10 @@
   }
   .modal-car-wrapper,
   .modal-bike-wrapper {
-    /* height: 100%; */
     height: auto;
   }
   .modal {
     width: 100%;
-    /* height: 100vh; */
     height: auto;
     border-radius: 0;
     padding: 2rem 0 0;
@@ -430,15 +413,8 @@
   /* section04 & 05 */
   .car-swiper,
   .bike-swiper {
-    & .swiper-button-prev,
-    & .swiper-button-next {
-      width: 4.5rem;
-      height: 4.5rem;
-      top: 102%;
-    }
     & .swiper-pagination {
       font-size: 2rem;
-      bottom: -3rem;
       & span {
         font-size: 2.4rem;
       }
@@ -502,6 +478,9 @@
   #section01 {
     height: 140vw;
   }
+  .header-heading h2 {
+    font-size: 3rem;
+  }
   /* section02 */
   #section02 {
     height: 160vw;
@@ -548,10 +527,6 @@
     & .swiper-button-next {
       width: 4rem;
       height: 4rem;
-      top: 108%;
-    }
-    & .swiper-pagination {
-      bottom: -12%;
     }
   }
   /* section07 */
@@ -601,20 +576,24 @@
   }
   .car-swiper,
   .bike-swiper {
-    & .swiper-button-prev {
-      left: 20%;
-    }
-    & .swiper-button-next {
-      right: 20%;
-    }
     & .swiper-button-prev,
     & .swiper-button-next {
       width: 4rem;
       height: 4rem;
-      top: 108%;
     }
-    & .swiper-pagination {
-      bottom: -14%;
-    }
+  }
+  .map-title {
+    font-size: 2.4rem;
+    font-weight: 500;
+  }
+  .map-info-list li {
+    font-weight: 300;
+  }
+  .map-info-list li b {
+    font-weight: 500;
+  }
+  .co-info-line span,
+  .co-info-line a {
+    line-height: 1.8em;
   }
 }

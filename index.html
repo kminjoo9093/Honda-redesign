@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HONDA Experience Space</title>
-    <!-- jQuery cdn -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- font cdn -->
     <link
       rel="stylesheet"
@@ -13,28 +11,15 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
-    <!-- fontawesome cdn -->
-    <script
-      src="https://kit.fontawesome.com/d536acf633.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- naver cloud map -->
-    <script
-      type="text/javascript"
-      src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=us4qduktxg"
-    ></script>
     <!-- swiper -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <!-- GSAP cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <!-- custom css -->
-     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/swiper-custom.css">
+    <link rel="stylesheet" href="css/swiper-custom.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
@@ -46,7 +31,7 @@
               ><img src="images/logo.svg" alt="혼다 로고"
             /></a>
             <a href="index.html" class="logo-mo"
-              ><img src="images/logo_MO.svg" alt="혼다 로고"
+              ><img src="images/logo_MO.svg" alt="혼다 로고" loading="lazy"
             /></a>
           </h1>
           <nav class="main-nav">
@@ -76,10 +61,10 @@
       <div class="scroll-header" tabindex="-1">
         <div class="co-logo">
           <a href="index.html" class="logo-pc">
-            <img src="images/logo.svg" alt="혼다 메인 로고" />
+            <img src="images/logo.svg" alt="혼다 메인 로고" loading="lazy" />
           </a>
           <a href="index.html" class="logo-mo">
-            <img src="images/logo_MO.svg" alt="혼다 로고" />
+            <img src="images/logo_MO.svg" alt="혼다 로고" loading="lazy" />
           </a>
         </div>
         <nav class="main-nav">
@@ -94,12 +79,7 @@
         </nav>
       </div>
       <!-- gnb popup -->
-      <div
-        class="gnb"
-        role="dialog"
-        aria-labelledby="menu"
-        aria-hidden="true"
-      >
+      <div class="gnb" role="dialog" aria-labelledby="menu" aria-hidden="true">
         <h2 id="menu" class="ally-hidden">메인메뉴</h2>
         <div class="nav-col-wrap">
           <div class="nav-col nav-col-01">
@@ -285,13 +265,11 @@
                     />
                   </div>
                 </div>
-                <div class="car-pagination swiper-pagination">
-                  <span class="swiper-pagination-current">1</span>
-                  <img src="images/slash.svg" alt="slash icon" />
-                  <span class="swiper-pagination-total">6</span>
+                <div class="swiper-controls">
+                  <button class="swiper-button-prev" aria-label="이전"></button>
+                  <div class="car-pagination swiper-pagination"></div>
+                  <button class="swiper-button-next" aria-label="다음"></button>
                 </div>
-                <button class="swiper-button-prev" aria-label="이전"></button>
-                <button class="swiper-button-next" aria-label="다음"></button>
               </div>
             </div>
           </div>
@@ -312,7 +290,7 @@
                     <img
                       class="bike-img"
                       src="images/img-bike-XL750.png"
-                      alt="Accord Turbo"
+                      alt="XL750"
                     />
                   </div>
                   <div class="swiper-slide">
@@ -320,7 +298,7 @@
                     <img
                       class="bike-img"
                       src="images/img-bike-GB350C.png"
-                      alt="Accord Hybrid"
+                      alt="GB350C"
                     />
                   </div>
                   <div class="swiper-slide">
@@ -328,7 +306,7 @@
                     <img
                       class="bike-img"
                       src="images/img-bike-Rebel500.png"
-                      alt="CR-V Turbo"
+                      alt="Rebel500"
                     />
                   </div>
                   <div class="swiper-slide">
@@ -336,7 +314,7 @@
                     <img
                       class="bike-img"
                       src="images/img-bike-Rebel1100_MT.png"
-                      alt="CR-V Hybrid 2WD"
+                      alt="Rebel1100 MT"
                     />
                   </div>
                   <div class="swiper-slide">
@@ -344,7 +322,7 @@
                     <img
                       class="bike-img"
                       src="images/img-bike-CB750_HORNET.png"
-                      alt="CR-V Hybrid 4WD"
+                      alt="CB750 HORNET"
                     />
                   </div>
                   <div class="swiper-slide">
@@ -352,7 +330,7 @@
                     <img
                       class="bike-img"
                       src="images/img-bike-Gold_wing_Tour_DCT_Airbag.png"
-                      alt="Pilot"
+                      alt="Gold wing Tour DCT"
                     />
                   </div>
                   <div class="swiper-slide">
@@ -368,7 +346,7 @@
                     <img
                       class="bike-img"
                       src="images/img-bike-CBR500R.png"
-                      alt="Pilot"
+                      alt="CBR500R"
                     />
                   </div>
                   <div class="swiper-slide">
@@ -376,7 +354,7 @@
                     <img
                       class="bike-img"
                       src="images/img-bike-CBR650R_E-Clutch.png"
-                      alt="Pilot"
+                      alt="CBR650R E-Clutch"
                     />
                   </div>
                   <div class="swiper-slide">
@@ -384,17 +362,15 @@
                     <img
                       class="bike-img"
                       src="images/img-bike-CB650R_E-Clutch.png"
-                      alt="Pilot"
+                      alt="CB650R E-Clutch"
                     />
                   </div>
                 </div>
-                <div class="bike-pagination swiper-pagination">
-                  <span class="swiper-pagination-current">1</span>
-                  <img src="images/slash.svg" alt="slash icon" />
-                  <span class="swiper-pagination-total">6</span>
+                <div class="swiper-controls">
+                  <button class="swiper-button-prev" aria-label="이전"></button>
+                  <div class="bike-pagination swiper-pagination"></div>
+                  <button class="swiper-button-next" aria-label="다음"></button>
                 </div>
-                <button class="swiper-button-prev" aria-label="이전"></button>
-                <button class="swiper-button-next" aria-label="다음"></button>
               </div>
             </div>
           </div>
@@ -563,12 +539,16 @@
                       <li>
                         <img
                           src="images/ico-course-05.svg"
-                          alt="dot" arid-hidden="true"
+                          alt="dot"
+                          arid-hidden="true"
                         />분당수서간도시고속화도로
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>경기
-                        성남시 수정구 산성대로 67-1
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />경기 성남시 수정구 산성대로 67-1
                       </li>
                       <li>
                         <img
@@ -619,15 +599,25 @@
                         />Cafe 'The go'
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>미금역
-                        수인분당선
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />미금역 수인분당선
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>대장IC
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />대장IC
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>경기
-                        성남시 분당구 정자동 100-2
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />경기 성남시 분당구 정자동 100-2
                       </li>
                       <li>
                         <img
@@ -681,20 +671,32 @@
                         />Cafe 'The go'
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>경기
-                        성남시 분당구 정자동 92
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />경기 성남시 분당구 정자동 92
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>경기도
-                        성남시 분당구 운종동 448-1
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />경기도 성남시 분당구 운종동 448-1
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>경기도
-                        성남시 분당구 운종동 산76-2
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />경기도 성남시 분당구 운종동 산76-2
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>경기도
-                        성남시 분당구 정자동 92
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />경기도 성남시 분당구 정자동 92
                       </li>
                       <li>
                         <img
@@ -727,7 +729,11 @@
             </li>
           </ul>
           <div class="swiper-scrollbar car"></div>
-          <button class="close-btn" onclick="closeModal()" aria-label="코스 정보 닫기">
+          <button
+            class="close-btn"
+            onclick="closeModal()"
+            aria-label="코스 정보 닫기"
+          >
             <img src="images/ico-pop-close.svg" alt="" />
           </button>
         </div>
@@ -754,22 +760,32 @@
                         />Cafe 'The go'
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>미금역
-                        수인분당선
-                      </li>
-                      <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>경기
-                        성남시 분당구 금곡동 444-130
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />미금역 수인분당선
                       </li>
                       <li>
                         <img
                           src="images/ico-course-05.svg"
-                          alt="dot" arid-hidden="true"
+                          alt="dot"
+                          arid-hidden="true"
+                        />경기 성남시 분당구 금곡동 444-130
+                      </li>
+                      <li>
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
                         />한국잡월드
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>경기
-                        성남시 분당구 정자동 100-2
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />경기 성남시 분당구 정자동 100-2
                       </li>
                       <li>
                         <img
@@ -823,13 +839,17 @@
                         />Cafe 'The go'
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>경기
-                        의왕시 안양판교로 372
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />경기 의왕시 안양판교로 372
                       </li>
                       <li>
                         <img
                           src="images/ico-course-05.svg"
-                          alt="dot" arid-hidden="true"
+                          alt="dot"
+                          arid-hidden="true"
                         />백궁사거리
                       </li>
                       <li>
@@ -884,20 +904,32 @@
                         />Cafe 'The go'
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>경기
-                        성남시 분당구 금곡동 221
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />경기 성남시 분당구 금곡동 221
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>경기도
-                        성남시 분당구 금곡동 363-1
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />경기도 성남시 분당구 금곡동 363-1
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>경기도
-                        성남시 분당구 금토동 273-52
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />경기도 성남시 분당구 금토동 273-52
                       </li>
                       <li>
-                        <img src="images/ico-course-05.svg" alt="dot" arid-hidden="true"/>경기도
-                        성남시 분당구 정자동 100-2
+                        <img
+                          src="images/ico-course-05.svg"
+                          alt="dot"
+                          arid-hidden="true"
+                        />경기도 성남시 분당구 정자동 100-2
                       </li>
                       <li>
                         <img
@@ -940,7 +972,7 @@
           <img src="images/ico-reservation.svg" alt="시승예약" />
           <a href="login.html" class="book-text">시승예약</a>
         </button>
-        <button class="go-top-btn">
+        <button class="go-top-btn" aria-label="위로 가기">
           <i class="fa-solid fa-arrow-up-long"></i>
         </button>
       </aside>
@@ -1044,10 +1076,24 @@
       </footer>
     </div>
 
+    <!-- jQuery cdn -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- fontawesome cdn -->
+    <script
+      src="https://kit.fontawesome.com/d536acf633.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- GSAP cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <!-- google map -->
-    <script>
+    <script defer>
       ((g) => {
         var h,
           a,
