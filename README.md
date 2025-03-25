@@ -56,7 +56,110 @@ Demo :
 <br><br><br>
 ## 주요 기능
 ### 1. gnb 키보드 탭 포커스
+<br>
+[관련 코드]<br>
+1️⃣ 메뉴 버튼 클릭,엔터 시 GNB의 첫번째 메뉴로 탭 포커스 이동, aria-hidden은 false
+2️⃣ 메뉴 닫기 버튼 클릭,엔터 시 메인 페이지의 첫번째 메뉴로 탭 포커스 이동, aria-hidden은 true
+3️⃣ GNB 메뉴 엔터 후 해당 메뉴의 하위 메뉴로 탭 포커스 이동
+   : 메뉴의 사용자 정의 속성 'data-nav'값과 하위 메뉴의 id로 연결
    
+```html
+<div class="gnb" role="dialog" aria-labelledby="menu" aria-hidden="true">
+        <h2 id="menu" class="ally-hidden">메인메뉴</h2>
+        <div class="nav-col-wrap">
+          <div class="nav-col nav-col-01">
+            <div class="nav-list">
+              <button class="active theGo-btn" data-nav="the-go">
+                Cafe 'The go'
+              </button>
+              <button class="myPage-btn" data-nav="my-page">My page</button>
+            </div>
+            <div class="cs-container" aria-labelledby="cs-center" role="group">
+              <p class="cs-heading" id="cs-center">Honda 고객센터</p>
+              <p class="cs-number">1588-3250</p>
+              <span class="cs-time"
+                >평일 09:00 ~ 18:00<br />(토/일요일, 공휴일 휴무)</span
+              >
+            </div>
+          </div>
+          <div class="nav-col nav-col-02">
+            <div class="theGo-content active" id="the-go">
+              <p class="subNav-list">
+                <a href="#">Cafe 'The go'소개</a>
+                <a href="#">시승예약</a>
+                <a href="#">시승예약내역</a>
+              </p>
+              <p class="nav-img">
+                <img src="images/@img_gnb_01.png" alt="더 고 매장 이미지" />
+              </p>
+            </div>
+            <div class="myPage-content" id="my-page">
+              <p class="subNav-list">
+                <a href="#">시승예약내역</a>
+                <a href="#">회원정보확인/수정</a>
+              </p>
+              <p class="nav-img">
+                <img src="images/@img_gnb_03.png" alt="타이핑 이미지" />
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="nav-btns">
+          <a href="login.html" class="myPage-icon-w">
+            <img src="images/ico-user-w.svg" alt="마이페이지" />
+          </a>
+          <button class="close-icon-w">
+            <img src="images/ico_x_w.svg" alt="메뉴 닫기" />
+          </button>
+        </p>
+      </div>
+```
+```javascript
+const openMenu = document.querySelectorAll(".nav-btns .menu-icon");
+const closeMenu = document.querySelector(".close-icon-w");
+const gnb = document.querySelector(".gnb");
+const gnbBg = document.querySelector(".gnb-dim");
+
+openMenu.forEach((btn)=>{
+  btn.addEventListener("click", () => {
+    handleGnb(true, ".theGo-btn");
+  });
+})
+  
+closeMenu.addEventListener("click", () => {
+  handleGnb(false, ".page-nav a");
+});
+closeMenu.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    handleGnb(false, ".page-nav a");
+  }
+});
+
+const handleGnb = (isOpen, targetFocus) => {
+  [gnb, gnbBg].forEach((i) => {
+    if (isOpen) {
+      i.classList.add("active");
+    } else {
+      i.classList.remove("active");
+    }
+  });
+  gnb.setAttribute("aria-hidden", !isOpen);
+
+  document.querySelector(targetFocus).focus();
+};
+
+// gnb tab focus
+$(".nav-list button").keydown(function (e) {
+  if (e.key === "Enter") {
+    $(this).siblings().removeClass("active");
+    $(this).addClass("active");
+
+    $(".nav-col-02 > div").removeClass("active");
+    $("#" + $(this).attr("data-nav")).addClass("active");
+  }
+});
+```
+<br><br><br>
 ### 2. 시승 차량 모델명 업데이트
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/bbebc4c7-2f80-44fb-b0f9-f4125fbba48a" />
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/1fa73adc-fb89-4a36-9d2a-76704216c2fe" />
@@ -69,8 +172,9 @@ Demo :
 updateName 함수에서 차량 이름을 초기화하고 active 클래스 제거<br>
 ** active 클래스 제거 이유 : 애니메이션 효과를 다시 적용하기 위해
 <br>
-3️⃣ setTimeout을 통해 클래스 추가 지연<br>
-setTimeout을 사용해 시간을 두고 DOM이 업데이트된 후 showItemName을 호출하여 active 클래스를 추가하여 애니메이션 효과 적용
+❎ **이슈** : 슬라이드 변경 후 updateName함수에서 active추가한 후 애니메이션 효과가 적용되지 않는 현상
+3️⃣ **해결** : setTimeout을 통해 클래스 추가 지연<br>
+            setTimeout을 사용해 시간을 두고 DOM이 업데이트된 후 showItemName을 호출. active 클래스를 추가하여 애니메이션 효과 적용
 <br>
 
 ```html
@@ -136,6 +240,55 @@ showItemName(".car-swiper", ".car-name");
 showItemName(".bike-swiper", ".bike-name");
 ```
 
+<br><br><br>
+### 3. 시승 코스 클릭 시 해당 코스 설명하는 슬라이드 모달창 띄우기
 <br>
-이슈 - 코스부분 코스 클릭 시 해당 코스모달로 순서 이동하여 열리도록 한 부분 
-gsap배우기 전 코드와 후
+[관련 코드]<br>
+1️⃣ car / bike 중 'data-type' 일치하는 모달 오픈하도록
+2️⃣ 모달창 오픈 후 클릭된 코스의 index를 받아서 slideToLoop(Index)로 해당 코스로 슬라이드 이동 설정, swiper.update()
+
+```javascript
+var carSwiper = new Swiper(".swiper.car", {
+  slidesPerView: 1,
+  spaceBetween: 100,
+  loop: true,
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    hide: false,
+  },
+});
+var bikeSwiper = new Swiper(".swiper.bike", {
+  slidesPerView: 1,
+  spaceBetween: 100,
+  loop: true,
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    hide: false,
+  },
+});
+
+openModal(".car-course-wrap", "car", carSwiper);
+openModal(".bike-course-wrap", "bike", bikeSwiper);
+
+function openModal(courseWrap, type, swiper) {
+  const modalWrap = document.querySelector(".modal-wrap.course");
+  const course = document.querySelector(courseWrap);
+  const courseBtns = course.querySelectorAll(".course-item");
+
+  courseBtns.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      modalWrap.classList.add("show");
+      const modals = document.querySelectorAll(".swiper.modal");
+      Array.from(modals).forEach((modal) => {
+        if (modal.dataset.type === type) {
+          modal.classList.add("show");
+          // 클릭한 슬라이드가 보이도록
+          swiper.slideToLoop(index);
+          swiper.update();
+        }
+      });
+    });
+  });
+}
+```
+
