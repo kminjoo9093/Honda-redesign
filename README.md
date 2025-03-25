@@ -58,10 +58,10 @@ Demo :
 ### 1. gnb 키보드 탭 포커스
 <br>
 [관련 코드]<br>
-1️⃣ 메뉴 버튼 클릭,엔터 시 GNB의 첫번째 메뉴로 탭 포커스 이동, aria-hidden은 false
-2️⃣ 메뉴 닫기 버튼 클릭,엔터 시 메인 페이지의 첫번째 메뉴로 탭 포커스 이동, aria-hidden은 true
-3️⃣ GNB 메뉴 엔터 후 해당 메뉴의 하위 메뉴로 탭 포커스 이동
-   : 메뉴의 사용자 정의 속성 'data-nav'값과 하위 메뉴의 id로 연결
+1️⃣ 메뉴 버튼 클릭,엔터 시 GNB의 첫번째 메뉴로 탭 포커스 이동, aria-hidden은 false<br>
+2️⃣ 메뉴 닫기 버튼 클릭,엔터 시 메인 페이지의 첫번째 메뉴로 탭 포커스 이동, aria-hidden은 true<br>
+3️⃣ GNB 메뉴 엔터 후 해당 메뉴의 하위 메뉴로 탭 포커스 이동<br>
+   : 메뉴의 사용자 정의 속성 'data-nav'값과 하위 메뉴의 id로 연결<br>
    
 ```html
 <div class="gnb" role="dialog" aria-labelledby="menu" aria-hidden="true">
@@ -244,8 +244,8 @@ showItemName(".bike-swiper", ".bike-name");
 ### 3. 시승 코스 클릭 시 해당 코스 설명하는 슬라이드 모달창 띄우기
 <br>
 [관련 코드]<br>
-1️⃣ car / bike 중 'data-type' 일치하는 모달 오픈하도록
-2️⃣ 모달창 오픈 후 클릭된 코스의 index를 받아서 slideToLoop(Index)로 해당 코스로 슬라이드 이동 설정, swiper.update()
+1️⃣ car / bike 중 'data-type' 일치하는 모달 오픈하도록<br>
+2️⃣ 모달창 오픈 후 클릭된 코스의 index를 받아서 slideToLoop(Index)로 해당 코스로 슬라이드 이동 설정, swiper.update()<br>
 
 ```javascript
 var carSwiper = new Swiper(".swiper.car", {
