@@ -173,7 +173,7 @@ $(".nav-list button").keydown(function (e) {
 updateName 함수에서 차량 이름을 초기화하고 active 클래스 제거<br>
 ** active 클래스 제거 이유 : 애니메이션 효과를 다시 적용하기 위해
 <br>
-❎ **이슈** : 슬라이드 변경 후 updateName함수에서 active추가한 후 애니메이션 효과가 적용되지 않는 현상
+❎ **이슈** : 슬라이드 변경 후 updateName함수에서 active추가한 후 애니메이션 효과가 적용되지 않는 현상<br>
 3️⃣ **해결** : setTimeout을 통해 클래스 추가 지연<br>
             setTimeout을 사용해 시간을 두고 DOM이 업데이트된 후 showItemName을 호출. active 클래스를 추가하여 애니메이션 효과 적용
 <br>
