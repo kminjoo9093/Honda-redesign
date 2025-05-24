@@ -484,8 +484,7 @@ section02.addEventListener('wheel', (e)=>{
 ```
 <br>
 1️⃣ &nbsp; 회전값과 크기값으로 활용할 rotationValue, scaleValue 변수를 선언하고 시작 값을 할당<br><br>
-2️⃣ &nbsp; wheel이벤트리스너로 스크롤을 내릴때마다(deltaY값이 0이상) rotationValue 값은 -= 5, scaleValue 값은 += 0.05 씩 가감시키고 <br>
-&nbsp;&nbsp; 일정 위치에서 회전과 크기가 멈춰야 하기 때문에 각각 한계값을 정하고 그 이상으로 진행되지 않도록 한다 <br><br>
+2️⃣ &nbsp; wheel이벤트리스너로 스크롤을 내릴때마다(deltaY값이 0이상) rotationValue 값은 -= 5, scaleValue 값은 += 0.05 씩 가감시키고 일정 위치에서 회전과 크기가 멈춰야 하기 때문에 각각 한계값을 정하고 그 이상으로 진행되지 않도록 한다 <br><br>
 3️⃣ &nbsp; 스크롤을 올리면 다시 처음 위치와 크기로 돌아와야 하기 때문에 회전값과 크기값을 반대로 가감시키며, 처음 설정한 값을 한계값으로 한다<br><br>
 
 ❗️&nbsp; GSAP의 위대함을 느꼈다 . . .
