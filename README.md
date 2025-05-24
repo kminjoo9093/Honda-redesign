@@ -313,4 +313,179 @@ function openModal(courseWrap, type, swiper) {
 
 <br><br><br>
 
-## 스타일
+## 🎨 &nbsp; 주요 스타일
+<br>
+
+### 1. 스크롤 인디케이터 애니메이션
+<br>
+<img width="249" alt="image" src="https://github.com/user-attachments/assets/7f1dee9e-4392-4e93-8c2e-0460de5768d7" />
+<br><br>
+
+1️⃣ &nbsp; translateX와 skewY속성 활용하여 좌,우 데칼코마니 도형으로 화살표 제작 <br><br>
+2️⃣ &nbsp; 세개의 요소에 scale, translateY 값이 변하는 애니메이션을 순차적으로 적용한다 <br><br>
+3️⃣ &nbsp; IntersectionObserver를 활용해 section01이 뷰포트에 들어올때만 이 인디케이터가 보이도록 한다<br><br>
+
+
+**[ CSS ]**
+
+```css
+.chevron:nth-child(1) {
+  animation: chevron 3s 1s ease-in-out infinite;
+}
+.chevron:nth-child(2) {
+  animation: chevron 3s 2s ease-in-out infinite;
+}
+.chevron:nth-child(3) {
+  animation: chevron 3s 3s ease-in-out infinite;
+}
+.chevron-el {
+  width: 1.2rem;
+  height: 0.5rem;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+}
+.chevron-el.left {
+  transform: translateX(-50%) skewY(30deg);
+}
+.chevron-el.right {
+  transform: translateX(50%) skewY(-30deg);
+}
+@keyframes chevron {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translate(0.7rem, 0);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1) translateY(2rem);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1) translateY(2.1rem);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1) translateY(2.2rem);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1) translateY(2.3rem);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3) translate(6px, 10rem);
+  }
+}
+```
+<br>
+
+**[ JS ]** <br>
+
+```js
+// section01 chevron
+showChevron();
+
+function showChevron(){
+  const section01 = document.querySelector('#section01');
+  const chevronObserver = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        document.querySelector('.ani-chevron').style.display = 'block';
+      } else {
+        document.querySelector('.ani-chevron').style.display = 'none';
+      }
+    })
+  }, {
+    threshold: 0.7  
+  })
+
+  chevronObserver.observe(section01);
+}
+```
+
+
+<br><br><br>
+<hr>
+
+### 2. 빨간 원 궤도 돌며 작아지기
+
+<br>
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/0ebcf16f-8139-401c-92e3-5957190d6994" />
+<br><br>
+
+1️⃣ &nbsp;  빨간 원이 도는 궤도를 마련하기 위한 .circle-rotate 요소를 .circle-left 요소와 동일한 곳에 위치시킨다 <br><br>
+2️⃣ &nbsp;  GSAP으로 section02가 뷰포트에 위치하는 지점과 함께 .red-circle의 scale값, .circle-rotate의 rotation값을 설정한다 <br><br>
+
+
+**[ HTML ]**
+
+```html
+<div class="img-circle circle-left">
+  <img src="images/img-cafe-02.png" alt="더고 카페 이미지" />
+</div>
+<div class="circle-rotate">
+  <p class="red-circle"></p>
+</div>
+```
+<br>
+
+**[ GSAP ]**
+
+```js
+// section02 red-circle
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#section02",
+        start: "50% 100%",
+        end: "100% 100%",
+        scrub: true,
+      },
+    })
+    .set(".red-circle", { scale: 1, ease: "none" })
+    .to(".red-circle", { scale: 1.5, ease: "none"});
+
+  // section02 circle rotate
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#section02",
+        start: "40% 100%",
+        end: "100% 100%",
+        scrub: true,
+      },
+    })
+    .from(".circle-rotate", { rotation: 0, ease: "power1.out" })
+    .to(".circle-rotate", { rotation: -45, ease: "power1.out" });
+```
+<br><br>
+
+### 🧪 &nbsp; GSAP 활용 전 시도한 방법
+
+```js
+//circle rotate & scale
+let rotationValue = 0;
+let scaleValue = 1;
+section02.addEventListener('wheel', (e)=>{
+ if(e.deltaY > 0){
+   rotationValue -= 5;
+   rotateCircle.style.transform = `rotate(${rotationValue<-40?-40:rotationValue}deg)`;
+   scaleValue += 0.05;
+   redCircle.style.transform = `translate(50%, -50%) scale(${scaleValue>1.3?1.3:scaleValue})`;
+ } else {
+   rotationValue += 5;
+   rotateCircle.style.transform = `rotate(${rotationValue>0?0:rotationValue}deg)`;
+   scaleValue -= 0.05;
+   redCircle.style.transform = `translate(50%, -50%) scale(${scaleValue<1?1:scaleValue})`;
+ }
+})
+```
+<br>
+1️⃣ &nbsp; 회전값과 크기값으로 활용할 rotationValue, scaleValue 변수를 선언하고 시작 값을 할당<br><br>
+2️⃣ &nbsp; wheel이벤트리스너로 스크롤을 내릴때마다(deltaY값이 0이상) rotationValue 값은 -= 5, scaleValue 값은 += 0.05 씩 가감시키고 <br>
+&nbsp;&nbsp; 일정 위치에서 회전과 크기가 멈춰야 하기 때문에 각각 한계값을 정하고 그 이상으로 진행되지 않도록 한다 <br><br>
+3️⃣ &nbsp; 스크롤을 올리면 다시 처음 위치와 크기로 돌아와야 하기 때문에 회전값과 크기값을 반대로 가감시키며, 처음 설정한 값을 한계값으로 한다<br><br>
+
+❗️&nbsp; GSAP의 위대함을 느꼈다 . . .
