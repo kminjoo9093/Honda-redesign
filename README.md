@@ -160,8 +160,8 @@ $(".nav-list button").keydown(function (e) {
 });
 ```
 <br><br>
-1️⃣ &nbsp; 메뉴 버튼 클릭,엔터 시 GNB의 첫번째 메뉴로 탭 포커스 이동, aria-hidden은 false<br>
-2️⃣ &nbsp; 메뉴 닫기 버튼 클릭,엔터 시 메인 페이지의 첫번째 메뉴로 탭 포커스 이동, aria-hidden은 true<br>
+1️⃣ &nbsp; 메뉴 버튼 클릭,엔터 시 GNB의 첫번째 메뉴로 탭 포커스 이동, aria-hidden은 false<br><br>
+2️⃣ &nbsp; 메뉴 닫기 버튼 클릭,엔터 시 메인 페이지의 첫번째 메뉴로 탭 포커스 이동, aria-hidden은 true<br><br>
 3️⃣ &nbsp; GNB 메뉴 엔터 후 해당 메뉴의 하위 메뉴로 탭 포커스 이동<br>
   &nbsp;&nbsp; : 메뉴의 사용자 정의 속성 'data-nav'값과 하위 메뉴의 id로 연결<br>
 <br><br><br>
