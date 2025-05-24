@@ -244,11 +244,11 @@ showItemName(".bike-swiper", ".bike-name");
 
 <br><br>
 
-1️⃣ &nbsp; slide-item-name은 display: none;으로 설정하고 textContent로 활용<br>
+1️⃣ &nbsp; slide-item-name은 display: none;으로 설정하고 textContent로 활용<br><br>
 2️⃣ &nbsp; 슬라이드 변경 시 updateName 호출<br>
 &nbsp;&nbsp; updateName 함수에서 차량 이름을 초기화하고 active 클래스 제거<br>
 &nbsp;&nbsp; ** active 클래스 제거 이유 : 애니메이션 효과를 다시 적용하기 위해
-<br>
+<br><br>
 ❌ &nbsp; **이슈** : 슬라이드 변경 후 updateName함수에서 active추가한 후 애니메이션 효과가 적용되지 않는 현상<br>
 3️⃣ &nbsp; **해결** : setTimeout을 통해 클래스 추가 지연<br>
   &nbsp;&nbsp;    setTimeout을 사용해 시간을 두고 DOM이 업데이트된 후 showItemName을 호출. active 클래스를 추가하여 애니메이션 효과 적용
@@ -308,5 +308,9 @@ function openModal(courseWrap, type, swiper) {
 
 <br>
 
-1️⃣ &nbsp; car / bike 중 'data-type' 일치하는 모달 오픈하도록<br>
-2️⃣ &nbsp; 모달창 오픈 후 클릭된 코스의 index를 받아서 slideToLoop(Index)로 해당 코스로 슬라이드 이동 설정, swiper.update()<br>
+1️⃣ &nbsp; car / bike 중 'data-type' 일치하는 모달 오픈하도록<br><br>
+2️⃣ &nbsp; 모달창 오픈 후 클릭된 코스의 index를 받아서 slideToLoop(Index)로 해당 코스로 슬라이드 이동 설정, swiper.update()<br><br>
+
+<br><br><br>
+
+## 스타일
