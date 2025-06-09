@@ -921,9 +921,9 @@
   gap: 1rem;
   z-index: 999;
 }
-.side-btns button {
-  width: 60px;
-  height: 60px;
+.side-btns a, .side-btns button {
+  width: 6rem;
+  height: 6rem;
   border-radius: 50px;
   cursor: pointer;
 }
