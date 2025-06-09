@@ -647,7 +647,7 @@
 .course-item:not(:last-child) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-.course-item button {
+.course-item {
   width: 100%;
   background-color: transparent;
   border: none;
@@ -673,7 +673,7 @@
   opacity: 0;
   visibility: hidden;
 }
-.course-item button:hover .course-description {
+.course-item:hover .course-description {
   opacity: 1;
   visibility: visible;
 }
