@@ -587,7 +587,6 @@
 
 /* =========== section06 ========= */
 #section06 {
-  /* height: 1400px; */
   padding: 12rem 0;
   background-color: #000;
 }
@@ -777,7 +776,7 @@
   width: 92.5%;
   max-width: 160rem;
   height: auto;
-  /* 높이 명시 안하면 스크롤 안됨 */
+  /* 높이 명시해야 스크롤 가능 */
   max-height: 100vh;
   border-radius: 2rem;
   padding: 10rem 8rem;
@@ -805,12 +804,13 @@
   flex-direction: column;
   gap: 4rem;
 }
-.course-info dt {
+.course-info .title {
   font-size: 4rem;
   font-weight: 700;
+  font-style: normal;
   margin-bottom: 1.2rem;
 }
-.course-info dd {
+.course-info .description {
   font-size: 2rem;
   font-weight: 300;
 }
@@ -845,8 +845,8 @@
 }
 .course-route ul::before {
   content: "";
-  height: 90%;
-  width: 12px;
+  height: 80%;
+  width: 1.2rem;
   border-right: 0.4rem dotted #ddd;
   position: absolute;
   top: 50%;
@@ -857,10 +857,24 @@
 .course-route li {
   font-size: 1.6rem;
   font-weight: 300;
+  line-height: 2.4em;
   display: flex;
-  align-items: center;
   gap: 1em;
   margin-bottom: 2rem;
+}
+.course-route li:before{
+  content: "";
+  display: inline-block;
+  height: inherit;
+  width: 2.8rem;
+  box-sizing: border-box;
+  background: url(../images/ico-course-05.svg) no-repeat center / auto;
+}
+.course-route li:first-child::before{
+  background: url(../images/ico-course-01.svg) no-repeat center / 100% auto;
+}
+.course-route li:last-child::before{
+  background: url(../images/ico-course-02.svg) no-repeat center / 100% auto;
 }
 .course-route li:last-child {
   margin-bottom: 0;
@@ -869,6 +883,7 @@
 .course-route li:last-child {
   font-weight: 500;
 }
+
 .course-img.pc {
   max-width: 96rem;
 }
