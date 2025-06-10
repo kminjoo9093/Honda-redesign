@@ -1,6 +1,7 @@
 # Honda cafe 'The go' 웹사이트 리디자인 & 클론
 <br>
-메인, 로그인 페이지 반응형 웹사이트<br><br>
+메인, 로그인 페이지 반응형 웹사이트<br>
+제작시기 : 2025.02<br><br>
 Demo : https://kminjoo9093.github.io/Honda-redesign/
 <br><br><br>
 <img src="https://github.com/user-attachments/assets/e11fe06d-39c1-4015-a96e-959e2f44cd33" height="250">
