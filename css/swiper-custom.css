@@ -13,18 +13,15 @@
   overflow: visible;
   margin-top: 12rem;
 }
-.car-swiper,
-.bike-swiper {
-  & .swiper-slide {
-    width: 90rem;
-    height: 60rem;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2rem;
-  }
+:is(.car-swiper, .bike-swiper) .swiper-slide{
+  width: 90rem;
+  height: 60rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
 }
 .car-swiper .swiper-slide {
   background-color: rgba(0, 0, 0, 0.4);
@@ -42,11 +39,8 @@
 .bike-img {
   width: 100%;
 }
-.car-slide,
-.bike-slide {
-  & .swiper-slide-active {
-    backdrop-filter: blur(10px);
-  }
+:is(.car-slide, .bike-slide) .swiper-slide-active{
+  backdrop-filter: blur(10px);
 }
 .swiper-controls{
   width: 100%;
@@ -78,13 +72,12 @@
   width: auto;
   margin: 0 10vw;
 }
-.car-pagination,
-.bike-pagination {
+.car-pagination, .bike-pagination{
   font-size: 3rem;
   font-weight: 300;
-  & .swiper-pagination-current {
-    font-weight: 700;
-  }
+}
+:is(.car-pagination, .bike-pagination) .swiper-pagination-current{
+  font-weight: 700;
 }
 .car-pagination {
   color: rgba(255, 255, 255, 0.2);

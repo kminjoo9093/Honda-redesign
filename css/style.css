@@ -1,3 +1,6 @@
+:is(html, body).open-modal{
+  scrollbar-width: none;
+}
 /* ========= Header ========= */
 .main-header {
   padding: 0 6rem;
@@ -113,9 +116,9 @@
   display: block;
   font-size: 2.4rem;
   margin-bottom: 4rem;
-  &:hover {
-    color: var(--Accent-color);
-  }
+}
+.subNav-list a:hover{
+  color: var(--Accent-color);
 }
 .nav-img {
   width: 100%;
@@ -191,11 +194,14 @@
   font-weight: 700;
 }
 /* =========== scroll header ========= */
+.scroll-header.active {
+  top: 0;
+}
 .scroll-header {
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 0 1rem;
-  /* display: none; */
   height: 6.4rem;
   width: 100%;
   position: fixed;
@@ -205,28 +211,24 @@
   justify-content: space-between;
   transition: 0.35s;
   z-index: 9998;
-  & .co-logo a {
-    width: 34.8rem;
-    & img {
-      width: 100%;
-    }
-  }
-  & .nav-btns {
-    gap: 2rem;
-    & a {
-      width: 3.2rem;
-      height: 3.2rem;
-      & img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
 }
-.scroll-header.active {
-  top: 0;
+.scroll-header .co-logo a {
+  width: 34.8rem;
 }
-
+.scroll-header .co-logo img{
+  width: 100%;
+}
+.scroll-header .nav-btns{
+  gap: 2rem;
+}
+.scroll-header .nav-btns a{
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.scroll-header .nav-btns img{
+  width: 100%;
+  height: 100%;
+}
 /* =========== section01 ========= */
 #section01 {
   width: 100%;
@@ -357,11 +359,9 @@
 .info-description br.mo {
   display: none;
 }
-#section02.active {
-  & .info-heading,
-  & .info-description {
-    animation: show-info-text 0.5s 0.5s linear forwards;
-  }
+#section02.active .info-heading,
+#section02.active .info-description {
+  animation: show-info-text 0.5s 0.5s linear forwards;
 }
 
 .info-heading {
@@ -454,25 +454,21 @@
 .book-description-area {
   overflow: hidden;
 }
+.book-description, .book-btns{
+  opacity: 0;
+  transform: translateY(100%);
+}
 .book-description {
   font-size: 2.8rem;
   font-weight: 300;
   text-align: center;
-  opacity: 0;
-  transform: translateY(100%);
-  & br.mo {
-    display: none;
-  }
 }
-.book-btns {
-  opacity: 0;
-  transform: translateY(100%);
+.book-description br.mo{
+  display: none;
 }
-#section03.active {
-  & .book-description,
-  & .book-btns {
-    animation: show-info-text 0.5s 0.5s linear forwards;
-  }
+#section03.active .book-description,
+#section03.active .book-btns {
+  animation: show-info-text 0.5s 0.5s linear forwards;
 }
 .book-btns a {
   font-size: 2rem;
@@ -631,6 +627,7 @@
   border-radius: 30px;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   cursor: pointer;
   transition: 0.35s;
 }
@@ -762,10 +759,11 @@
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 .modal-wrap.course.show {
   opacity: 1;

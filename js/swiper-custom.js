@@ -101,6 +101,8 @@ function openModal(courseWrap, type, swiper) {
   courseBtns.forEach((btn, index) => {
     btn.addEventListener("click", () => {
       modalWrap.classList.add("show");
+      document.documentElement.classList.add("open-modal");
+      document.body.classList.add("open-modal");
       const modals = document.querySelectorAll(".swiper.modal");
       Array.from(modals).forEach((modal) => {
         if (modal.dataset.type === type) {
@@ -117,6 +119,8 @@ function openModal(courseWrap, type, swiper) {
 const closeModal = () => {
   const modalWrap = document.querySelector(".modal-wrap.course.show");
   modalWrap.classList.remove("show");
+  document.documentElement.classList.remove("open-modal");
+  document.body.classList.remove("open-modal");
   const modals = document.querySelectorAll(".swiper.modal");
   Array.from(modals).forEach((modal) => {
     modal.classList.remove("show");

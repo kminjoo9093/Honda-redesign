@@ -12,10 +12,10 @@
   .car-swiper,
   .bike-swiper {
     margin-top: 6rem;
-    & .swiper-slide {
-      width: 77rem;
-      height: 55rem;
-    }
+  }
+  :is(.car-swiper, .bike-swiper) .swiper-slide{
+    width: 77rem;
+    height: 55rem;
   }
   /* section07 */
   .map-info {
@@ -64,20 +64,15 @@
     right: 0;
   }
   /* section04 & 05 */
-  .car-swiper,
-  .bike-swiper {
-    /* 슬라이드 아이템 하나씩 보이도록 */
-    & .swiper-button-prev,
-    & .swiper-button-next {
-      width: 6rem;
-      height: 6rem;
-    }
-    & .swiper-pagination {
-      font-size: 2.4rem;
-      & span {
-        font-size: 3rem;
-      }
-    }
+  :is( .car-swiper, .bike-swiper ) :is(.swiper-button-prev, .swiper-button-next) {
+    width: 6rem;
+    height: 6rem;
+  }
+  :is( .car-swiper, .bike-swiper ) .swiper-pagination{
+    font-size: 2.4rem;
+  }
+  :is( .car-swiper, .bike-swiper ) .swiper-pagination span{
+    font-size: 3rem;
   }
   /* section07 */
   .map-wrap {
@@ -241,12 +236,11 @@
   .bike-name {
     font-size: 5.2rem;
   }
-  .car-swiper,
-  .bike-swiper {
+  .car-swiper, .bike-swiper {
     height: 60vw;
-    & .swiper-slide {
-      height: 55vw;
-    }
+  }
+  :is(.car-swiper, .bike-swiper ) .swiper-slide{
+    height: 55vw;
   }
   /* section06 */
   #section06 {
@@ -268,6 +262,7 @@
   }
   .course-box {
     max-width: 100%;
+    padding: 3rem;
   }
   .course-box.car {
     background: url(../images/img-cafe-06-car-m.png) no-repeat center / cover;
@@ -275,18 +270,25 @@
   .course-box.bike {
     background: url(../images/img-cafe-06-cycle-m.png) no-repeat center / cover;
   }
-  .course-heading {
+  .course-heading, .course-title {
     font-size: 2rem;
   }
-  .course-item button dt {
-    font-size: 1.8rem;
+  .course-title{
+    color: #fff;
+  }
+  .course-item button .course-description {
+    opacity: 1;
+    visibility: visible;
+  }
+  .caption-pc{
+    display: none;
   }
   /* section07 */
   #section07 {
     padding: 0;
-    & .section-inner {
-      min-width: 100%;
-    }
+  }
+  #section07 .section-inner{
+    min-width: 100%;
   }
   .map-wrap {
     border-radius: 0;
@@ -303,19 +305,19 @@
     display: block;
   }
   /* modal */
-  .modal-wrap.course.show {
-    height: auto;
-    overflow-y: auto;
-  }
-  .modal-car-wrapper,
-  .modal-bike-wrapper {
-    height: auto;
+  .modal-wrap.course{
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .modal {
     width: 100%;
-    height: auto;
     border-radius: 0;
-    padding: 2rem 0 0;
+    padding: 0;
+  }
+  .modal-car-wrapper,
+  .modal-bike-wrapper {
+    padding-block: 1rem;
   }
   .modal-content {
     flex-direction: column;
@@ -325,15 +327,16 @@
   .course-info {
     width: 100%;
     text-align: center;
-    & dl {
-      margin-bottom: 2rem;
-      & dt {
-        font-size: 2.8rem;
-      }
-      & dd {
-        font-size: 1.6rem;
-      }
-    }
+    gap: 1rem;
+  }
+  .course-text{
+    margin-bottom: 2rem;
+  }
+  .course-info .title{
+    font-size: 2.8rem;
+  }
+  .course-info .description{
+    font-size: 1.6rem;
   }
   .course-img.pc {
     display: none;
@@ -343,7 +346,7 @@
   }
   .course-bottom {
     padding: 0 2rem;
-    gap: 3rem;
+    gap: 2rem;
   }
   .course-detail {
     text-align: left;
@@ -391,12 +394,12 @@
   }
   .info-description {
     font-size: 1.8rem;
-    & br.pc {
-      display: none;
-    }
-    & br.mo {
-      display: block;
-    }
+  }
+  .info-description br.pc{
+    display: none;
+  }
+  .info-description br.mo{
+    display: block;
   }
   .img-circle,
   .circle-rotate {
@@ -411,14 +414,11 @@
     top: 16rem;
   }
   /* section04 & 05 */
-  .car-swiper,
-  .bike-swiper {
-    & .swiper-pagination {
-      font-size: 2rem;
-      & span {
-        font-size: 2.4rem;
-      }
-    }
+  :is(.car-swiper, .bike-swipe) .swiper-pagination {
+    font-size: 2rem;
+  }
+  :is(.car-swiper, .bike-swipe) .swiper-pagination span{
+    font-size: 2.4rem;
   }
   /* section06 */
   .section06-title {
@@ -433,7 +433,7 @@
   .course-item button dd {
     opacity: 1;
     visibility: visible;
-    & .dd-pc {
+    & .caption-pc {
       display: none;
     }
   }
@@ -521,30 +521,24 @@
   .bike-swiper {
     margin-top: -3rem;
   }
-  .car-swiper,
-  .bike-swiper {
-    & .swiper-button-prev,
-    & .swiper-button-next {
+  :is( .car-swiper, .bike-swiper ) :is(.swiper-button-prev, .swiper-button-next){
       width: 4rem;
       height: 4rem;
-    }
   }
   /* section07 */
   .map-info {
     padding: 2rem;
   }
-  .map-info-list {
-    & li {
-      gap: 0.5em;
-      & img {
-        width: 2rem;
-        height: 2rem;
-      }
-      & b {
-        width: 9rem;
-        flex: none;
-      }
-    }
+  .map-info-list li{
+    gap: 0.5em;
+  }
+  .map-info-list li img{
+    width: 2rem;
+    height: 2rem;
+  }
+  .map-info-list li b{
+    width: 9rem;
+    flex: none;
   }
   #map {
     height: 150vw;
@@ -554,15 +548,15 @@
     padding: 6rem;
     font-size: 1.6rem;
   }
-  .login-inputs input[type="text"],
-  .login-inputs input[type="password"] {
+  .login-inputs :is(input[type="text"], input[type="password"]){
     font-size: 1.6rem;
-    &::placeholder {
-      font-family: inherit;
-      font-size: 1.6rem;
-    }
+  }
+  .login-inputs :is(input[type="text"], input[type="password"])::placeholder{
+    font-family: inherit;
+    font-size: 1.6rem;
   }
 }
+
 @media (max-width: 450px) {
   .book-content {
     padding: 0 1rem;
@@ -574,13 +568,9 @@
     line-height: 3em;
     padding: 0 1.3em;
   }
-  .car-swiper,
-  .bike-swiper {
-    & .swiper-button-prev,
-    & .swiper-button-next {
-      width: 4rem;
-      height: 4rem;
-    }
+  :is(.car-swiper, .bike-swiper) :is(.swiper-button-prev, .swiper-button-next){
+    width: 4rem;
+    height: 4rem;
   }
   .map-title {
     font-size: 2.4rem;
