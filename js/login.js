@@ -6,7 +6,8 @@ const loginBtn = document.querySelector('.login-btn'),
 
 inputID.focus;
 
-loginBtn.addEventListener('click', ()=>{
+loginBtn.addEventListener('click', (e)=>{
+  e.preventDefault();
   //아이디 없을 떄
   if(inputID.value.length === 0 || inputID.value === null){
     inspectInput(inputID, errorID, '아이디를 입력해 주세요.');
@@ -30,7 +31,6 @@ function inspectInput(input, errorArea, errorMessage){
   errorArea.textContent = errorMessage;
   //reset input
   input.addEventListener('focus', (e)=>{
-    e.target.value = '';
     input.classList.remove('active');
     errorArea.classList.remove('active');
   })
